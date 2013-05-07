@@ -206,11 +206,14 @@ sub login {
     print " -- logging in as $login\r";
     
     my $username_field = $config{'form#login'}{'username'};
-    my $username       = $config{$section}{'username'};
     my $password_field = $config{'form#login'}{'password'};
-    my $password       = $config{$section}{'password'};
     my $submit_button  = $config{'form#login'}{'submit'};
     my $checkbox_field = $config{'form#login'}{'checkbox'};
+
+    my $username       = $config{$section}{'username'};
+    $username = $login if not defined $username;
+    my $password       = $config{$section}{'password'};
+    $password = $login if not defined $password;
     
     my $javascript = qq(jQuery("${username_field}").val("${username}");)
                    . qq(jQuery("${password_field}").val("${password}"););
