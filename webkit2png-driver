@@ -59,6 +59,7 @@ else {
     if ( $#ARGV > -1 ) {
         foreach my $page ( @ARGV ) {
             foreach my $section ( keys %config ) {
+                next if $section =~ m{\#};
                 push( @pages, $section )
                     if $section =~ m{$page};
             }
