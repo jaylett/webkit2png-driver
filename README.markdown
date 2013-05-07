@@ -82,7 +82,7 @@ To temporarily explore the screengrabs using the HTML indexes without
 transferring them to a web server first:
 
     # indexes browseable at <http://localhost:8000/>
-    % python -m SimpleHTTServer
+    % python -m SimpleHTTPServer
     
 ### Permanently archive screengrabs
 
